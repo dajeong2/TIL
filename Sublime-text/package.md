@@ -12,6 +12,8 @@ ___
 **특징+단축키**
 + `command`+`k`+`화면영역`: 원하는 영역으로 창 분할
 
+---
+
 ###MarkdownEditing
 마크다운 프리뷰 패키지
 
@@ -25,4 +27,15 @@ ___
 `View` > `Syntax` > `Open all with current extension as` > `MarkdownEditing`  
 
 ---
+
+###color picker
+web color 미리보기 
+
+---
+
+###JS prettify
+스크립트 코드 정렬 패키지
+
+**설정**
+`tool` > `Syntax` > `Open all with current extension as` > `MarkdownEditing`  
 
