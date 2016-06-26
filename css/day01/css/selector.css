@@ -1,0 +1,130 @@
+@charset "utf-8";
+/*! selectors.css yamoo.net,2016*/
+
+/*CSS주석
+한단락주석: command + /
+선택전체문장 주석: ?? 
+*/ 
+
+/**
+ * CSS선택자
+   요소간의 띄어쓰기를 주의하자~
+ ------------------
+ */
+
+ /**
+ 1) 요소 선택자: E{  }
+*/
+
+body{
+	/*요소 초기화*/
+	margin: 0;
+	padding: 0;
+	/*글자크기변경*/
+	font-size: 20px;
+	/*고정 값 px을 상대 값으로 변경하고자 한다면?
+		px(고정값): 기기마다 다르다
+		em(상대값):equal M */
+	font-size: 20/16;
+}
+/* 
+2) 전체 선택자: *{  }, E*{  }
+*/
+body * {
+	/*body안의 모든 요소에 적용*/
+	margin: 0;	
+}
+
+ /* 
+ 3)그룹핑 E,E,E{  }
+ 요소 + 그룹핑 + 아이디 + 전체 선택자
+ CSS 선택자는 여러 유형이 조합되어 사용된다. 
+ 	#아이디 선택자:0100점
+ 	.클래스 선택자:010점
+
+ */
+ body,body *{
+ 	margin: 0;
+ }
+
+ /* 
+ 4)자식 선택자 E(P) > E(C)
+ >child combinator
+ --------------------
+ '직계'자식을 가리키는 선택자
+ */
+
+ #shopping1 h4 {
+ 	color: #7045cf;
+ }
+
+ #shopping1 > h4 {
+ 	color: #7045cf;
+ }
+
+ /*
+5)클래스 선택자 
+	E.class-name{ }
+		디자인 컨셉이 명확하지 않은 경우 사용을 자제
+	.class-name{ }
+		대중적으로 사용되는 방법, 코드 재사용 목적
+	.class-name1.class-name2{  }
+		교집합,class-name1이 class-name2도 가지고 있어야 한다. 
+	.class-name1 .class-name2{  }
+ */
+
+ .button{
+ 	background-color: #000;
+ 	color: white;
+ }
+
+ .buy{	
+ 	color: orange;
+ }
+
+#shopping1 .button .buy {
+	color: pink;
+}
+
+ /*IE-6에서는 순서가 중요하다*/
+ .button.cancel-buy {color:lime;}
+ .cancel-buy.button {color: lime;} 
+
+/*
+형제 선택자
+인접 형제 선택자 E + E
+일반 형제 선택자 E ~ E
+---------------------
+인접 형제 선택자 사용시 주의점!
+	절대적으로 틀(프레임)이 무너지지 않아야 한다. 
+*/
+#shopping1 ul { 
+	border: 1px solid;
+	border-color: red; }
+
+#shopping1 h4 + ul { border-color: lightblue; }
+#shoppingGrapTab > #shopping1 > h4 { font-size: 30px; }
+#shoppingGrapTab > #shopping1 ~ h4 { color: orange; }
+
+/*
+속성 선택자
+[attr]
+[attr="value"]
+*/
+/*[id] { border: 2px dot blue; }
+[class] { outline: 3px solid rgba(255,255,0,0.5); }*/
+
+	/*특정 ID 선택자를 찾고자 한다면?*/
+	/*#shopping3 {}*/
+	/*다음중 어떤 선택자가 적용이 될까요?*/
+	#shopping3 [class="screen_out oops"] {
+		border: 6px solid #303030;
+	}
+
+	#shopping3 [class="screen_out"] {
+		border: 6px solid #303030;
+	}
+
+	#shopping3 [class="oops screen_out"] {
+		border: 2px solid #303030;
+	}
