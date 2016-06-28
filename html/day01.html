@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+DTD (Document Type Description)
+:문서 유형 정의. 문서 최상단에 입력하여 웹 브라우저에게 현재 문서가 웹 표준 문서임을 알린다. 
+ ※주석이 이 코드 위에 있으면 올바르지 않은 DTD로 간주하여 비표준 모드로 동작한다. 
+c)document.compatMode : 표준/비표준 문서로 렌더링 되는지 확인, 
+  표준 모드일 경우, CSS1Compat를 출력 
+  비표준 모드일 경우, BackCompat를 출력--> 
+
+<!--[if IE 6]><html lang="ko-KR" class="ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
+<!-- 
+조건부 주석문(MS IE)
+:인터넷 익스플로러 구 버전에서 생기는 문제들을 CSS핵을 사용하지 않고서 해결 할 수 있다. 
+ ※단, IE 10에서는 적용이 안됨. 자바스크립트 조건문을 사용해서 해결해야한다.
+ s)cc4ie --> 
+
+<html lang="ko-KR" dir="ltr">
+<!-- html
+: 주 언어 명시를 통해 문서의 주요 언어가 무엇인지 명시 할 수 있다. 
+HTML문서의 루트 요소. <head>와 <body> 두개의 자식 요소를 가진다. 
++)dir(direction,문자를 읽는 방식) :왼쪽->오른쪽(ltr),오른쪽->왼쪽은(rtl) ltr이 기본 적용 
++)lang(언어) :다중으로 사용 가능. 웹 접근성 향상 en/en-US/ko/ja.. ko-KR 남한서 사용되는 서비스 -->
+	
+	<head>
+		<!-- HTML5 이전에 사용되던 인코딩 코드 -->
+		<!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">-->
+		<meta charset="UTF-8"> 
+		<!-- 
+		인코딩 
+		:텍스트 언어 인코딩을 UTF-8로 설정하여 모든 유니코드 문자를 표현할 수 있도록 설정하고, 깨지는 한글 문제를 해결한다. 
+			※UTF-8
+			장점: 
+			 	모든 유니코드 문자를 표현할 수 있다.
+				바이트 표현의 첫 바이트만 사용하여 해당 바이트 표현의 길이를 결정할 수 있다. 따라서 부분 문자열을 얻는 과정이 매우 쉽다.
+				인코딩에 간단한 비트 연산만 사용되므로 효과적이다. UTF-8은 곱셈이나 나눗셈과 같은 느린 연산들을 사용하지 않는다.
+			단점:
+				대부분의 UTF-8 문자열은 일반적으로 적당한 기존 인코딩으로 표현한 문자열보다 더 크다. 
+				판독 기호를 사용하는 대부분의 라틴 알파벳 문자는 적어도 2바이트를 사용하며, 한중일 문자들과 표의 문자들은 적어도 3바이트를 사용한다.
+				한중일 문자들과 표의 문자를 제외한 거의 모든 기존 인코딩들은 한 문자에 1바이트를 사용하므로 문자열 처리가 간편한 반면, UTF-8은 그렇지 않다. -->
+
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<!--IE 작동 버전 설정
+		:비표준 코드이나 IE의 호환성 보기 모드를 설정하는 코드로 이를 사용 할 경우 IE의 동작 버전을 설정 할 수 있다. 
+			7 버전으로 렌더링. <meta http-equiv="X-UA-Compatible" content="IE=Emulate7">
+			8 버전으로 렌더링. <meta http-equiv="X-UA-Compatible" content="IE=8">
+			9 버전으로 렌더링. <meta http-equiv="X-UA-Compatible" content="IE=9">
+			최신 버전으로 렌더링. <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+		+)http-equiv: <meta> 요소에서 정의된 명령을 먼저 실행 후 페이지를 로딩.
+		+)content: 실험적인 웹이 아니고선 대부분 "IE=Edge" 권장 
+		s)meta:compat -->
+
+		<title> 프론트엔드 개발 스쿨 | Front End Develop SCHOOL</title>
+		<!--title
+		:웹 문서의 제목, title 위엔 엔코딩, IE호환성 코드만 나머지는 다 타이틀 밑으로~
+		※페이지마다 타이틀을 다르게 해주자- 검색 엔진 최적화 + 웹접근성 향상  -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, 
+		minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!--메타뷰포트(http://aboooks.tistory.com/352) 
+		:모바일 최적화 환경, 표준은 아니나 사실상 표준처럼 사용
+ 		+)content: 디바이스 설정. 기본값은 가로 960px.  
+		s)meta:vp -->
+
+
+		<!-- 검색 엔진 최적화(SEO, Search Engine Optimization) -->
+		<meta name="description" content="프론트엔드 개발을 위한 HTML 마크업을 다루고 있습니다"> 
+		<!-- 200~300자내외: 매 페이지마다 다르게 작성해야 다시 찾기가 쉽다-->
+		<meta name="keywords" content="프론트엔드,개발,스쿨,패스트캠퍼스"> <!-- 10개내외로작성 -->
+		<meta name="author" content="dajeong222">
+
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- 외부 CSS파일 호출,연결 ※자세한것은 css파트 참고 
+		+)rel: relation
+		+)href: 
+
+		절대경로: 웹 서버 환경에서 테스팅 가능, 사용 서버가 연결된 폴더가 root 
+		상대경로: ./, ../--> 
+
+	</head>
+	<body></body>
+</html>
