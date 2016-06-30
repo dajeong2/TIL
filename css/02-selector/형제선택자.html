@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS형제선택자</title>
+	<style>
+		/* 인접형제 + */
+		div>h1+p{
+			color:pink;
+		}
+		/* 일반형제 ~ */
+		div>p~p{color:orange;}
+
+		div>h1~p{color:skyblue;}
+	</style>
+</head>
+<body>
+
+	<div>
+		<div></div>
+		<h1>이름</h1>
+		<p>다정</p>
+		<h3>:</h3>
+		<p>난다정이야.</p>
+		<div></div>
+	</div>
+
+</body>
+</html>
