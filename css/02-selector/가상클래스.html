@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS가상클래스</title>
+	<style>	
+
+	/*A-1 span{}값을 따로 지정해 주지 않고 할 수 있는 방법 없을까?*/
+	#parent > :nth-child(2) :not(span) { color: pink; }
+	span{ color: black;}
+
+	/*A-2 */
+	#parent > .child > :not(ul):not(p) { border: 1px solid blue; }
+	#parent > .child:nth-child(1) > :nth-child(1) { height: 5px; border: 1px solid red; }
+
+
+
+	/*B-2*/
+	.wrapper :nth-child(2){ color: red; }
+	.wrapper:nth-child(2){ color: green; }
+	</style>
+</head>
+<body>
+<!--
+A 
+	1)id="parent"인 요소의 2번째 직계 자식을 찾은 후,해당 자식의 자손들 중 <span> 요소를 제외한 나머지 요소의 색상을 분홍색으로 바꾸어라 ~
+	2)전체에서 p와 ul요소만 빼고 border 1px solid blue 적용  -->
+	<div id="parent">
+		<div class="child">
+			<div class="child"></div>
+			<ul class="reset-list">
+				<li><a href="child/item-1.html">item-1</a></li>
+				<li><a href="child/item-2.html">item-2</a></li>
+				<li><a href="child/item-3.html">item-3</a></li>
+			</ul>
+		</div>
+		<div class="child">
+			<div class="child">1</div>
+			<p class="child">2</p>
+			<div class="child">3
+<!-- 				<ul>
+					<li><a href="child/content-1.html">content-1</a></li>
+					<li><a href="child/content-2.html">content-2</a></li>		
+				</ul> -->
+				<p>랄랄랄<span>랄</span>랄랄랄</p>
+			</div>
+		</div>		
+	</div>
+
+
+<!-- 
+B 
+	1) 띄어쓰기는 중요하다! 	.wrapper :nth-child(2)  /  .wrapper:nth-child(2) -->
+	<div class="wrapper">
+		<div class="child">
+			<p>1</p>
+		</div>
+		<div class="child">
+			<p>2</p>
+		</div>
+		<div class="child">
+			<p>3</p>
+		</div>
+		<div class="child">
+			<p>4</p>
+		</div>
+		<div class="child">
+			<p>5</p>
+		</div>
+	</div>
+	
+
+</body>
+</html>

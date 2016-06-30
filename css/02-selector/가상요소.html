@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 가상요소</title>
+	<link rel="stylesheet" href="Resources/reset.css">
+	<link rel="stylesheet" href="Resources/common.css">
+	<style>
+	/*A-1*/
+	.dajeong::before, .jeonghwa::after { 
+		content: attr(class); font-size: 20px; color: red;
+	}
+
+	</style>
+</head>
+<body>
+	<!--A-1) -->
+	<h2>Dropcap design</h2>
+	<p class="dajeong">짱</p>
+	<p class="dajeong">짱</p>
+	<p class="jeonghwa">짱</p>	
+</body>
+</html>
