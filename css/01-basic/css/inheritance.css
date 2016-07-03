@@ -1,0 +1,29 @@
+/*16.06.02*/
+div.parent {
+	border: 1px solid red;
+	padding: 10px;
+	margin: 10px;
+	color: blue;
+
+	font-family: Helvetica;
+	font-size: 20px;
+}
+.parent { width: 500px; 
+ 		  height: 500px;
+ 		  font-size: 10px; }
+
+.child1 { width: 500px; 
+ 		  height: 500px;
+ 		  font-size: 20px; }
+
+.child2 { width: 200px; 
+ 		  height: 200px;
+ 		  font-size: 30px; }
+.child3-1 { width: 500px; 
+ 		  height: 500px;
+ 		  font-size: 40px; }
+.child3-2 {
+	width: inherit;
+	height: inherit;
+	font-size: inherit;
+} 		  
