@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Float Design</title>
+	<link rel="stylesheet" href="../../Resources/reset.css">
+	<link rel="stylesheet" href="../../Resources/common.css">
+	<link rel="stylesheet" href="02-float-Design.css">
+</head>
+<body>
+
+<!--Q.1: 다음과 같은 상황에서 이미지 사이즈가 변해도 문단이 이미지로 부터 10px 떨어져서 오른쪽으로 정렬 되게 하려면? (이미지 밑으로 텍스트가 오면 안되고,유지보수 측면에서 접근하시오. ) -->
+<!--A: "overflow: hidden;" 어떤 원리로 작동되는 건진 모르나, 이 기능을 이용해서 해결할 수 있다. -->
+	<div class="image-container">
+		<img class="align-left" src="http://placehold.it/300x300/000/fff/?text=300x300" alt="300x300">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ullam minima, nihil quos! Laborum nostrum in expedita et magnam consequatur quae accusantium, porro, aspernatur soluta atque sed repellat est officia.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+	</div>
+	<!-- : 위 예제는 p요소에 "overflow:hidden"을 사용하였다. 그러나 적용이 모든 p요소에 적용되지 않았다. 그 이유는 "overflow:hidden"이 인접되어져 있는 p요소에만 적용이 되고 하위 p요소에는 적용이 되지 않았기 때문이다.  -->
+	<div class="image-container">
+		<img class="align-left" src="http://placehold.it/200x200/000/fff/?text=200x200" alt="200x200">
+		<div class="adjacent-img">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ullam minima, nihil quos! Laborum nostrum in expedita et magnam consequatur quae accusantium, porro, aspernatur soluta atque sed repellat est officia.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptates perspiciatis, mollitia dolorem odio quae, minima ea accusamus fugit cupiditate autem voluptatum maiores. Itaque praesentium dicta blanditiis deserunt enim voluptatum.</p>
+		</div>
+	</div>		
+	<!-- : p요소를 하나의 div요소로 묶어서 	"overflow:hidden"을 적용하였다. 그랬더니 요청된 상황이 해결되었다.   -->		
+		
+
+</body>
+</html>
