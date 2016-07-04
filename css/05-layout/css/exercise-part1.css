@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+/*전체적인 레이아웃 설정 */
+main {
+	width: 900px;
+}
+div {
+	width: 25%;
+	height: 231px;
+	padding-top: 55px;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: left;
+	text-align: center;
+	line-height: 1.5;
+	font-size: 1em;
+	font-family:'open-sans;
+	color: #464646;
+}
+img {
+	width: 25%;
+	height: 231px;
+	float: left;
+	vertical-align: bottom;	
+}
+
+/*첫째 상단*/
+div.peter{
+	font-size: 19px
+	line-height: 1.1;
+	width: 50%;
+	background: pink;
+}
+
+img.peter{
+	width: 50%;
+}
+
+/*문단 스타일*/
+.heading {
+	padding-bottom: 18px;
+	font-size: 19px;
+	line-height: 1.1px;	
+	font-family: 'Montserrat';
+}
+
+
+/*가상요소*/
+.comment::after {
+    display: block;
+    width: 60px;
+    border-bottom: 1px solid #464646 ;
+    content: '';
+    margin: 13px auto 15px;
+}
+
+/*트위터 아이콘*/
+a{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.twitter {
+	width: 15px;
+	height: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 33px;
+}
+
