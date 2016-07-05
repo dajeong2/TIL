@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>웹페이지골격</title>
+	<link rel="stylesheet" href="../../Resources/reset.css">
+	<link rel="stylesheet" href="../../Resources/common.css">
+	<link rel="stylesheet" href="css/02-page-structure.css">
+</head>
+<body>
+<!-- page 구조 | CSS float레이아웃 디자인 -->
+<!-- float 영향을 받는 요소에서 해제를 하지 않을 경우 발생하는 문제. -->
+	<!--1.요소에 float을 주면 내부 요소 까지 떨어지는 아이콘이 생성된다
+	2. 플롯속성을 먹인 요소에 높이 값을 지정하게 되면 
+	밑에있는 하위 요소들이 다 영향을 받아 레이아웃이 무너지게 된다. 그러므로 float의 영향을 받게 하지 않을 요소들에게 clear를 작성해준다.  -->
+
+
+	<header class="page-header"></header>
+	<nav class="page-navigation"></nav>
+	<div>
+	<main class="page-main"></main>
+	<aside class="page-sidebar"></aside>		
+	</div>
+	<footer class="page-footer"></footer>	
+</body>
+</html>	
+		

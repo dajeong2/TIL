@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style>
+	/*CSS position은 4가지 설정값
+	float처럼 하위요소에 기준해 영향을 미치는 것이 아니라 자기 자신에게만 적용
+	- statcic (기본 설정 | position 효과 해지하고 싶을 때 사용)
+	- relative 
+	- absolute: 부모요소 의 위치로 부터 상대적인 거리로 이동.
+				(이때 position 값이 static만 아니면 부모 요소로 인정. 이때 가장 인접한 부모요소로 부터 영향. 부모가 없다면 화면을 기준으로 설정 ) ;
+	- fixed (ie6-버그)*/
+	div{ 
+		box-sizing: border-box;
+		width: 10%;
+		height: 10%; 
+		line-height: 50px;
+		text-align: center; 
+	}
+	.parentbox{ 
+		background: #eee;
+		width: 500px; 
+		height: 500px;
+		position: absolute; 
+	}
+	.position{
+		position: absolute;
+		right: 40%;
+		top: 40%;
+	}
+	.box1 { background: #EC2B75; }
+	.box2 { background: #7AECE7; }
+	.box3 { 
+		background: #E3EC83;
+	 }
+
+	</style>
+</head>
+<body>
+<div class="parentbox">
+	<div class="position">
+		<div class="box1">I</div>
+		<div class="box2">love</div>
+		<div class="box3">you</div>
+	</div>
+</div>	
+</body>
+</html>

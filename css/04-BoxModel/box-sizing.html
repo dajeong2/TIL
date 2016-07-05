@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 박스모델 크기 설정</title>
+	<style>
+		body {
+			margin: 5% 15%;
+			font: 1rem/1.5 Verdana;
+			color: #494949;
+		}
+
+		/*box-design*/
+		[class$="-box"] {			
+			width: 240px;
+			padding-top: 0.45rem;
+			padding-bottom: 0.45rem;
+			margin-bottom: 1rem;
+			outline: 1px dotted #484848;
+			text-align: center;
+			/*box-sizing 비교
+			:width가 content값의 가로폭으로 지정되어 마진값을 주면 박스가 가로로 늘어난 것처럼 보인다. */
+			padding-left: 20px;
+			border: 5px solid red;
+		}
+
+		.content-box { box-sizing: content-box; background: #f6e497;  }
+		.border-box { box-sizing: border-box; background: #cab34e; }
+		/*box-sizing: 비교
+		box-sizing:border-box를 통해 width를 border영역까지 설정하여 
+		레이아웃이 무너지는 것을 막을 수 있다. */
+		.container {background: #eee;}
+
+		.row::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.col {
+			float:left;
+			width: 33.333%;
+			text-align: center;
+			color: #fff;
+			box-sizing: border-box;
+		}		
+	</style>
+</head>
+<body>
+<div class="content-box">content-box</div>
+<div class="border-box">border-box</div>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			column
+		</div>
+		<div class="col">
+			column
+		</div>
+		<div class="col">
+			column
+		</div>
+	</div>
+</div>
+</body>
+</html>

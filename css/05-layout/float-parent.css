@@ -1,0 +1,44 @@
+/*방법1. 부모 요소도 띄어라 float 적용 */
+.parent {	
+	float: left;
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 6px solid #eceded;*/
+	margin-bottom: 2rem;
+	background: #efefef;	
+}
+
+.child {
+	float: left;
+	width: 140px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	color: hsl(0, 0%, 100%);
+}
+
+.child:first-child { background: #3c1323;}
+.child:nth-child(2) { 
+	background: #1c4e36;
+	height: 150px;}
+.child:last-child { background: #15143d;}
+
+/*4:모듈화시키자~; */
+.clearfix::after {
+	display: block; 
+	content: 'clearfix';
+	visibility: hidden;
+	height: 0;
+	clear: both;
+}
+
+/*.new-clearfix::after {
+	display: block;
+	content: '';
+	clear: both;
+}	*/
+
+
+	
+

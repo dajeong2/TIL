@@ -1,72 +1,71 @@
-* {
-    box-sizing: border-box;
+* { box-sizing: border-box; }
+
+/*전체 영역*/
+.container { 
+	width: 900px; 
 }
-/*전체적인 레이아웃 설정 */
-main {
-	width: 900px;
-}
-div {
-	width: 25%;
-	height: 231px;
-	padding-top: 55px;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: left;
+li {
+	float: left;	
 	text-align: center;
-	line-height: 1.5;
-	font-size: 1em;
-	font-family:'open-sans;
-	color: #464646;
 }
+
 img {
-	width: 25%;
 	height: 231px;
-	float: left;
+	width: 225px;
 	vertical-align: bottom;	
 }
 
-/*첫째 상단*/
-div.peter{
-	font-size: 19px
-	line-height: 1.1;
-	width: 50%;
-	background: pink;
+
+
+
+
+/*텍스트 블럭*/
+div.comment {
+	padding: 55px 25px;
 }
 
-img.peter{
-	width: 50%;
+div.text-block {
+	width: 225px;
 }
 
-/*문단 스타일*/
-.heading {
-	padding-bottom: 18px;
-	font-size: 19px;
-	line-height: 1.1px;	
-	font-family: 'Montserrat';
+/*텍스트 스타일*/
+p { 
+	font: #464646 1.188rem/1.1 "Montser";
+	padding: 18px 0 13px;}
+
+p.heading { font: 1rem/1.5 "Montser"; }
+
+
+/* 첫번째 라인 */
+img.first-line {
+	width: 450px;
 }
 
-
-/*가상요소*/
-.comment::after {
-    display: block;
-    width: 60px;
-    border-bottom: 1px solid #464646 ;
-    content: '';
-    margin: 13px auto 15px;
+div.text-block.wide {
+	width: 450px;
 }
 
 /*트위터 아이콘*/
-a{
-	display: inline-block;
+div.text-block::after {
+	display: block;
+	content: "";
+	height: 1px;
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	background: #BFBFBF;
+}
+
+
+a {
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.twitter {
+.twitter{
 	width: 15px;
 	height: 15px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 33px;
+
 }
 

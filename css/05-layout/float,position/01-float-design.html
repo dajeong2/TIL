@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="css/01-float-design.css">
 </head>
 <body>
+<!--Q.1: 다음과 같은 상황에서 이미지 사이즈가 변해도 문단이 이미지로 부터 10px 떨어져서 오른쪽으로 정렬 되게 하려면? (이미지 밑으로 텍스트가 오면 안되고,유지보수 측면에서 접근하시오. ) -->
+
+<!--A: "overflow: hidden;" 어떤 원리로 작동되는 건진 모르나, 이 기능을 이용해서 해결할 수 있다. -->
+
+<!-- : 위 예제는 p요소에 "overflow:hidden"을 사용하였다. 그러나 적용이 모든 p요소에 적용되지 않았다. 그 이유는 "overflow:hidden"이 인접되어져 있는 p요소에만 적용이 되고 하위 p요소에는 적용이 되지 않았기 때문이다.  -->
 
   <div class="image-container blank-bottom-img">
     <img class="align-left" src="http://placehold.it/300x300" alt="" width="300" height="300" >
@@ -21,7 +26,7 @@
       <p>디자인을 위한 더미 텍스트!. 보기만 청춘아! 햇볕처럼 피어나는 숨소리가 해도 빛나는 숨 죽여도, 않고 내일의. 심장 너야말로, 않고 소리 거추장스런 장엄한. 야무 한글 로렘입숨 로렘입숨이란? </p>
     </div>
   </div>
-
+   
   <div class="image-container">
     <img class="align-left blank-bottom" src="http://placehold.it/140x300" alt="" width="140" height="300" >
     <div>
